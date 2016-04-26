@@ -25,7 +25,10 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view){
         //display(quantity);
-        displayPrice(quantity * 5);
+        //displayPrice(quantity * 5);
+        int price = quantity * 5;
+        String priceMessage = "Total: ￥" + price + "\nThank you!";
+        displayPriceMessage(priceMessage);
     }
 
     /**
@@ -66,6 +69,14 @@ public class MainActivity extends AppCompatActivity {
     private void displayPrice(int number) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+    }
+
+    /**
+     * This method displays the given string value on the screen.
+     */
+    private void displayPriceMessage(String priceMessage) {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(priceMessage);
     }
 
 
